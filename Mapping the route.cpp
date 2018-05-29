@@ -46,7 +46,7 @@ int main(){
 				if(i == 1){for(int k = 0; k<m;k++) cout<<"+---"; cout<<"+\n";}
 				else {for(int j = 1; j<=m;j++){ cout<<"+"; (maze[i-1][j]==2 or maze[i-1][j]==3)?cout<<"---":cout<<"   ";}cout<<"+\n";}
 				for(int j = 1; j <= m; j++){
-					(j==1)?cout<<"|":cout<<""; (path[i][j]==0)?cout<<"???":(path[i][j]==-1)?cout<<"   ":cout<<"  "<<path[i][j]; (maze[i][j] == 1 or maze[i][j]==3 or j==m)?cout<<"|":cout<<" ";
+					(j==1)?cout<<"|":cout<<""; (path[i][j]==0)?cout<<"???":(path[i][j]==-1)?cout<<"   ":(path[i][j]<10)?cout<<"  "<<path[i][j]:(path[i][j]<100)?cout<<" "<<path[i][j]:cout<<path[i][j]; (maze[i][j] == 1 or maze[i][j]==3 or j==m)?cout<<"|":cout<<" ";
 				}cout<<endl;
 			}
 			for(int k = 0; k<m;k++) cout<<"+---"; cout<<"+\n";
@@ -56,6 +56,4 @@ int main(){
 	}
 	return 0;
 }
-
-
 
